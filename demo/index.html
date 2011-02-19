@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<title>Tweaked FancyBox Demonstration</title>
+	<script type="text/javascript" src="../lib/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.fancybox-1.3.4.tweaked.js"></script>
+	<script type="text/javascript" src="../lib/jquery.growshrink.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+ 	<link rel="stylesheet" href="style.css" />
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			*   Examples - images
+			*/
+
+			$("a#example1").fancybox({
+				transitionIn    : 'growshrink',
+				transitionOut   : 'growshrink'
+			});
+
+			$("a#example2").fancybox({
+				overlayShow	    : false,
+				transitionIn    : 'growshrink',
+				transitionOut   : 'growshrink'
+			});
+
+			/*
+			*   Examples - various
+			*/
+
+			$("#various1").fancybox({
+			    speedIn             : 5000,
+			    speedOut            : 5000,
+				titlePosition	    : 'inside',
+				transitionIn		: 'growshrink',
+				transitionOut		: 'growshrink'
+			});
+
+			$("#various2").fancybox({
+				width				: '75%',
+				height  			: '75%',
+				autoScale			: false,
+				transitionIn		: 'growshrink',
+				transitionOut		: 'growshrink',
+				type				: 'iframe'
+			});
+		});
+	</script>
+</head>
+<body>
+<div id="content">
+	<h1>fancybox tweaked<span>v1.3.4</span></h1>
+
+	<p>This is a tweaked version of FancyBox 1.3.4. For the original awesome
+	    FancyBox library please check its
+	    <a href="http://fancybox.net">Home page</a></p>
+    <p><a href="../index.html">Back to the jQuery.growShrink demo</a></p>
+	<hr />
+	<p>With and without title - GrowShrink effect<br />
+		<a id="example1" href="./fancybox/5_b.jpg" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."><img alt="example4" src="./fancybox/5_s.jpg" /></a>
+		<a id="example2" href="./fancybox/12_b.jpg" title=""><img class="last" alt="" src="./fancybox/12_s.jpg" /></a>
+	</p>
+
+	<p>Examples with content</p>
+	<p><strong>NOTE: The inline content example is way slowed down so that
+	    you can clearly see the effect of the transform vs. mangling with
+	    'width' &amp; 'height' properties.</strong></p>
+	<ul>
+		<li><a id="various1" href="#inline1" title="Lorem ipsum dolor sit amet">Inline</a></li>
+		<li><a id="various2" href="http://google.ca">Iframe</a></li>
+	</ul>
+
+	<div style="display: none;">
+		<div id="inline1" style="width:400px;height:200px;overflow:auto;">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis mi eu elit tempor facilisis id et neque. Nulla sit amet sem sapien. Vestibulum imperdiet porta ante ac ornare. Nulla et lorem eu nibh adipiscing ultricies nec at lacus. Cras laoreet ultricies sem, at blandit mi eleifend aliquam. Nunc enim ipsum, vehicula non pretium varius, cursus ac tortor. Vivamus fringilla congue laoreet. Quisque ultrices sodales orci, quis rhoncus justo auctor in. Phasellus dui eros, bibendum eu feugiat ornare, faucibus eu mi. Nunc aliquet tempus sem, id aliquam diam varius ac. Maecenas nisl nunc, molestie vitae eleifend vel, iaculis sed magna. Aenean tempus lacus vitae orci posuere porttitor eget non felis. Donec lectus elit, aliquam nec eleifend sit amet, vestibulum sed nunc.
+		</div>
+	</div>
+
+	<p>
+		Photo Credit: <a href="http://www.flickr.com/people/kharied/">Katie Harris</a>
+	</p>
+</div>
+</body>
+</html>

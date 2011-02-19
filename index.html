@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>jQuery.growFrom / shrinkTo dem</title>
+<meta name="author" content="Webpop">
+<style type="text/css">
+body {
+    color: #262626;
+	background: #eee;
+	font: normal 14px/1.5em Georgia, Times, serif;
+}
+
+a {
+    font-weight: bold;
+    color: #444;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #666;
+}
+
+#dest p {
+    margin: 0px;
+}
+
+#container {
+    width: 700px;
+    margin: 50px auto;
+    padding: 0px 25px;
+    background: white;
+    border: 1px solid #ccc;
+}
+
+#src {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+#other {
+    float: right;
+    margin-top: 30px;
+}
+
+#dest {
+    width: 710px;
+    height: 460px;
+    background: white;
+    padding: 10px;
+    position: absolute;
+    display: none;
+    top: 100px;
+    left: 400px;
+	font: normal 12px/18px Georgia, Times, serif;
+	
+    -moz-box-shadow: 0 0 30px 4px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 30px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 30px 4px rgba(0, 0, 0, 0.5);
+}
+</style>
+<script type="text/javascript" src="lib/jquery.min.js"></script>
+<script type="text/javascript" src="lib/jquery.growshrink.js"></script>
+<script type="text/javascript" src="demo/demo.js"></script>
+</head>
+<body>
+<div id="container">
+
+    <h1>Demo for growFrom / shrinkTo jQuery plugin</h1>
+    
+    <p>Click on the <strong>Webpop</strong> logo below to trigger the <code>#dest</code> layer using <strong>growFrom</strong>.</p>
+    <p>Hey! You can <input type="checkbox" name="slow" id="slow"><strong>slow down the effect</strong> to see how the transform works.</p>
+
+    <div id="other">Or <a href="">click here</a> to trigger using a link</div>
+    <div id="src"><img src="demo/thumb-webpop.png" width="100" height="100" alt="Thumb Webpop"></div>
+
+    <p>There is also a <a href="demo/index.html">demo for a tweaked FancyBox</a> plugin.</p>
+
+    <div id="dest">
+        <img src="demo/image-webpop.jpg" width="710" height="440" alt="Image Webpop">
+        <p>Click <a href="http://www.webpop.com/">here</a> to visit Webpop or &gt;&gt; <a id="close" href="#">Close window</a>
+    </div>
+
+</div>
+</body>
+</html>
