@@ -5,32 +5,95 @@
 <title>jQuery.growFrom / shrinkTo dem</title>
 <meta name="author" content="Webpop">
 <style type="text/css">
+* {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
 body {
-    color: #262626;
-	background: #eee;
-	font: normal 14px/1.5em Georgia, Times, serif;
+    background: #e5e5e5 url('demo/bg.png');
 }
 
-a {
-    font-weight: bold;
-    color: #444;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: #666;
-}
-
-#dest p {
-    margin: 0px;
+#outer {
+    text-align:center;
+    width: 700px;
+    margin: 0 auto;
 }
 
 #container {
-    width: 700px;
-    margin: 50px auto;
-    padding: 0px 25px;
-    background: white;
-    border: 1px solid #ccc;
+    text-align: left;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 500;
+    color: #333;
+    text-shadow:#fff 0px 1px 0px;
+    margin: 10px 0 0 0;
+    padding: 0;
+    letter-spacing: -1px;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 300;
+    color: #333;
+    text-shadow:#fff 0px 1px 0px;
+    margin: 0 0 10px 0;
+    letter-spacing: -1px;
+}
+
+p {
+    font-size: 14px;
+    color: #333;
+    text-shadow: #fff 0px 1px 0px;
+}
+
+dt {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-shadow: #fff 0px 1px 0px;
+    float: left;
+}
+
+dd {
+    font-size: 13px;
+    font-weight: normal;
+    color: #444;
+    text-shadow: #fff 0px 1px 0px;
+    padding-top: 4px;
+    margin: 0px 0px 10px 50px;
+}
+
+dd.quote {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+}
+
+hr {
+    border: 0 none;
+    width: 100%;
+    height: 1px;
+    background: rgba(0,0,0,0.2);
+    border-bottom: 1px solid white;
+}
+
+a, a:visited {
+    color: #333;
+    text-shadow: #fff 0px 1px 0px;
+    text-decoration: none;
+}
+
+a, label {
+    font-weight: bold;
+    border-bottom: 1px solid #666;
+    cursor: pointer;
+}
+
+a:hover, label:hover {
+    color: #666;
+    border-bottom: 1px solid #aaa;
 }
 
 #src {
@@ -41,7 +104,9 @@ a:hover {
 
 #other {
     float: right;
-    margin-top: 30px;
+    margin-top: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
 }
 
 #dest {
@@ -55,33 +120,55 @@ a:hover {
     left: 400px;
 	font: normal 12px/18px Georgia, Times, serif;
 	
-    -moz-box-shadow: 0 0 30px 4px rgba(0, 0, 0, 0.5);
-    -webkit-box-shadow: 0 0 30px 4px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 30px 4px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 30px 4px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 0 30px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 30px 4px rgba(0, 0, 0, 0.4);
 }
+
+#dest p {
+    margin: 0px;
+}
+
 </style>
 <script type="text/javascript" src="lib/jquery.min.js"></script>
 <script type="text/javascript" src="lib/jquery.growshrink.js"></script>
 <script type="text/javascript" src="demo/demo.js"></script>
 </head>
 <body>
+<div id="outer">
 <div id="container">
 
-    <h1>Demo for growFrom / shrinkTo jQuery plugin</h1>
+    <h1>Demo for <strong>growFrom</strong> / <strong>shrinkTo</strong></h1>
     
     <p>Click on the <strong>Webpop</strong> logo below to trigger the <code>#dest</code> layer using <strong>growFrom</strong>.</p>
-    <p>Hey! You can <input type="checkbox" name="slow" id="slow"><strong>slow down the effect</strong> to see how the transform works.</p>
+    <p>Hey! You can <input type="checkbox" name="slow" id="slow"><label for="slow">slow down the effect</label> to see how the transform works.</p>
 
-    <div id="other">Or <a href="">click here</a> to trigger using a link</div>
+    <div id="other">
+        <p>Or <a href="">click here</a> to trigger using a link<br/>
+        (Note that it grows from the link bounding box)</p>
+    </div>
     <div id="src"><img src="demo/thumb-webpop.png" width="100" height="100" alt="Thumb Webpop"></div>
 
     <p>There is also a <a href="demo/index.html">demo for a tweaked FancyBox</a> plugin.</p>
 
+    <hr />
+    <h2>Changelog</h2>
+    
+    <dl>
+        <dt>v0.2</dt>
+        <dd>Adds support for 3D transforms (Hardware accelerated in Webkit).</dd>
+        <dd class="quote"><strong>Note:</strong> To enable GPU accelerated 3D transforms in Chrome, navigate
+            to "<strong>about:flags</strong>" and enable "<strong>GPU Accelerated Compositing</strong>". You may need to restart the
+            browser to apply changes.
+        </dd>
+    </dl>
+    
     <div id="dest">
         <img src="demo/image-webpop.jpg" width="710" height="440" alt="Image Webpop">
         <p>Click <a href="http://www.webpop.com/">here</a> to visit Webpop or &gt;&gt; <a id="close" href="#">Close window</a>
     </div>
 
+</div>
 </div>
 </body>
 </html>

@@ -11,7 +11,7 @@
             return false;
         });
 
-        $("#close").click(function(){
+        $("#close, #dest img").click(function(){
             var slow = $("#slow").get(0).checked;
 
             $(this).closest("div").shrinkTo($("#dest").data("origin"), {

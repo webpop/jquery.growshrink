@@ -28,8 +28,30 @@ Also, look into demo/index.html for a tweaked version of FancyBox.
 
 ## Requirements
 
-* A browser with CSS3 transform support (!/msie[0-8]+/)
-* This plugin is for jQuery. Tested on jQuery 1.4 and 1.5, but I think on older versions will work too.
+- A browser with CSS3 transform support (!/msie[0-8]+/)
+- This plugin is for jQuery. Tested on jQuery 1.4 and 1.5, but I think on older versions will work too.
+
+## Browser compatibility
+
+The following table shows CSS3 capabilities from current browsers
+
+                  CSS Animations  3D Transforms  2D Transforms
+                  --------------  -------------  -------------
+    Safari 5.0.3         YES           YES           YES
+    Chrome 9.0.597       YES           NO (*)        YES
+    Firefox 4.0b11       NO            NO            YES
+    Opera 11.01          NO            NO            YES
+
+    (*) Chrome is Webkit based, so you would expect the same functionality
+    from Safari. It turns out it does not, at least not by default. To enable
+    GPU accelerated 3D transforms you need to activate it like this:
+
+        - Navigate to "about:flags".
+        - Enable "GPU Accelerated Compositing" flag.
+        - Restart the browser.
+
+    Too much hassle for the average user. :-)
+
 
 ## TODO
 
